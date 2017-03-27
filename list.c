@@ -48,8 +48,6 @@ BOOL list_add(List *plist, Node *pnode)
 		return FALSE;
 	}
 
-	
-
 	if (plist == NULL) {
 		plist->next = node;
 		node->next = NULL;
