@@ -3,7 +3,7 @@
 
 typedef enum bool_em {
 	FALSE = 0,
-	TREU = 1
+	TRUE = 1
 } BOOL;
 
 #define MAX_NAME_LEN 128
@@ -27,10 +27,10 @@ typedef struct list_st {
 void list_init(List *plist);
 
 // list is empty
-BOOL list_is_empty(List *plist);
+BOOL list_is_empty(const List *plist);
 
 // list is full
-BOOL list_is_full(List *plist);
+BOOL list_is_full(const List *plist);
 
 // list add 
 BOOL list_add(List *plist, Node *pnode);
@@ -39,9 +39,11 @@ BOOL list_add(List *plist, Node *pnode);
 BOOL list_delete(List *plist, Node *pnode);
 
 // list show
-void list_show(List *plist); 
+void list_show(const List *plist, void (*show_cb)(Node *pnode)); 
 
 // list find 
 BOOL list_find(List *plist, Node *pnode);
 
+// list count
+int list_count(const List *plist);
 #endif
